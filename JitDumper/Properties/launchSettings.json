@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "JitDumper": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

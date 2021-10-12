@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\hooks">
+      <UniqueIdentifier>{53445e76-7254-4c88-b780-9436d62ee1a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\offsets">
+      <UniqueIdentifier>{7da97116-29b5-4322-bdf1-ae645764d59d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\pdb">
+      <UniqueIdentifier>{69261789-d1ed-41b8-8047-55021de8249e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hooks\profiles">
+      <UniqueIdentifier>{36268eb8-0738-4bd6-ba97-6bd81f2b6780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hooks\detours">
+      <UniqueIdentifier>{e52b52e5-7fd9-4c00-9c23-363f9f0eda12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hooks\callback">
+      <UniqueIdentifier>{c588fad0-2dd6-497c-8317-eea341520da8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jit_hook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\detours\modules.cpp">
+      <Filter>Source Files\hooks\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\detours\detours.cpp">
+      <Filter>Source Files\hooks\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks\detours\disasm.cpp">
+      <Filter>Source Files\hooks\detours</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="hooks\utils.hpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets\clr_offsets.hpp">
+      <Filter>Source Files\offsets</Filter>
+    </ClInclude>
+    <ClInclude Include="pdb\pdb_downloader.hpp">
+      <Filter>Source Files\pdb</Filter>
+    </ClInclude>
+    <ClInclude Include="pdb\pdb_module.hpp">
+      <Filter>Source Files\pdb</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\profiles\compiler_net_4.hpp">
+      <Filter>Source Files\hooks\profiles</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\profiles\compiler_net_core_1.hpp">
+      <Filter>Source Files\hooks\profiles</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\profiles\compiler_net_core_2.hpp">
+      <Filter>Source Files\hooks\profiles</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\profiles\compiler_net_core_3.hpp">
+      <Filter>Source Files\hooks\profiles</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\profiles\compiler_net_core_5.hpp">
+      <Filter>Source Files\hooks\profiles</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\cee_info.hpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\profiles\compiler_creator.hpp">
+      <Filter>Source Files\hooks\profiles</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\detours\detours.h">
+      <Filter>Source Files\hooks\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\profiles\compiler.hpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\hook.hpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\hook_manager.hpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="pdb\pdb_process.hpp">
+      <Filter>Source Files\pdb</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks\callback\callback_info.hpp">
+      <Filter>Source Files\hooks\callback</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
