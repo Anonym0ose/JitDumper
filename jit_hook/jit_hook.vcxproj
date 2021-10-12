@@ -202,7 +202,7 @@
     <ClInclude Include="hooks\callback\callback_info.hpp" />
     <ClInclude Include="hooks\hook.hpp" />
     <ClInclude Include="hooks\hook_manager.hpp" />
-    <ClInclude Include="hooks\profiles\compiler.hpp" />
+    <ClInclude Include="hooks\compiler.hpp" />
     <ClInclude Include="hooks\cee_info.hpp" />
     <ClInclude Include="hooks\detours\detours.h" />
     <ClInclude Include="hooks\profiles\compiler_creator.hpp" />

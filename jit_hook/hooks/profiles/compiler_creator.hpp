@@ -1,5 +1,5 @@
 #pragma once
-#include "hooks/profiles/compiler.hpp"
+#include "hooks/compiler.hpp"
 #include "hooks/profiles/compiler_net_4.hpp"
 #include "hooks/profiles/compiler_net_core_1.hpp"
 #include "hooks/profiles/compiler_net_core_2.hpp"
