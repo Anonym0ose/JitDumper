@@ -4,6 +4,7 @@
 #include <DbgHelp.h>
 #include <filesystem>
 #include <format>
+#include <array>
 #include <locale>
 #include <codecvt>
 
