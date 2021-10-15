@@ -27,7 +27,7 @@ namespace jit_hook::hooks
 		{
 			offsets::resolve_token(this, resolved_token);
 			const auto token = read<uint32_t>(resolved_token + offsets::resolved_token_offsets.at("token"));
-			const auto module = read<uint32_t>(resolved_token + offsets::resolved_token_offsets.at("tokenScope"));
+			const auto module = read<uintptr_t>(resolved_token + offsets::resolved_token_offsets.at("tokenScope"));
 
 			if (callback::loaded_module == module)
 			{
