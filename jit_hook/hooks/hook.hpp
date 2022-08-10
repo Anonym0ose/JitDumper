@@ -4,8 +4,8 @@ namespace jit_hook::hooks
 	class hook
 	{
 	public:
-		virtual void apply_hook() const = 0;
+		virtual ~hook() {};
 
-		virtual void remove_hook() const = 0;
+		virtual bool apply_hook() const = 0;
 	};
 }

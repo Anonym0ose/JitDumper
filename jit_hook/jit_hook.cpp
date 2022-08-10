@@ -2,6 +2,7 @@
 #include "offsets/clr_offsets.hpp"
 #include "hooks/callback/callback_info.hpp"
 #include "hooks/utils.hpp"
+#include "PolyHook2/Exceptions/HWBreakPointHook.hpp"
 #include "hooks/hook.hpp"
 #include "hooks/hook_manager.hpp"
 #include "hooks/cee_info.hpp"

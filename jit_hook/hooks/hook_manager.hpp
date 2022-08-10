@@ -11,28 +11,18 @@ namespace jit_hook::hooks
 
 		~hook_manager()
 		{
-			DetourTransactionBegin();
-			DetourUpdateThread(GetCurrentThread());
-
-			for (const auto& hook : hooks)
-			{
-				hook->remove_hook();
-			}
-
-			DetourTransactionCommit();
+			hooks.clear();
 		}
 
 		bool apply_hooks() const
 		{
-			DetourTransactionBegin();
-			DetourUpdateThread(GetCurrentThread());
-
+			auto result = true;
 			for (const auto& hook : hooks)
 			{
-				hook->apply_hook();
+				result &= hook->apply_hook();
 			}
 
-			return DetourTransactionCommit() == 0;
+			return result;
 		}
 
 	private:

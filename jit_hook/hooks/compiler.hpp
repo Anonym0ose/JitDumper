@@ -7,33 +7,38 @@ namespace jit_hook::hooks
 	public:
 		virtual void compile_method(const uintptr_t method_desc) const = 0;
 
-		void apply_hook() const override
+		~compiler() override
 		{
-			auto comp_compile_address = &compiler::comp_compile;
-			DetourAttach(&reinterpret_cast<void*&>(offsets::comp_compile), *reinterpret_cast<void**>(&comp_compile_address));
-
-			auto imp_resolve_token_address = &compiler::imp_resolve_token;
-			DetourAttach(&reinterpret_cast<void*&>(offsets::imp_resolve_token),
-				*reinterpret_cast<void**>(&imp_resolve_token_address));
+			comp_compile_manager.reset();
+			imp_resolve_token_manager.reset();
 		}
 
-		void remove_hook() const override
+		bool apply_hook() const override
 		{
 			auto comp_compile_address = &compiler::comp_compile;
-			DetourDetach(&reinterpret_cast<void*&>(offsets::comp_compile), *reinterpret_cast<void**>(&comp_compile_address));
+			comp_compile_manager = std::make_unique<PLH::HWBreakPointHook>(reinterpret_cast<char*>(offsets::comp_compile),
+				*reinterpret_cast<char**>(&comp_compile_address), GetCurrentThread());
 
 			auto imp_resolve_token_address = &compiler::imp_resolve_token;
-			DetourDetach(&reinterpret_cast<void*&>(offsets::imp_resolve_token),
-				*reinterpret_cast<void**>(&imp_resolve_token_address));
+			imp_resolve_token_manager = std::make_unique<PLH::HWBreakPointHook>(reinterpret_cast<char*>(offsets::imp_resolve_token),
+				*reinterpret_cast<char**>(&imp_resolve_token_address), GetCurrentThread());
+
+			return comp_compile_manager->hook() && imp_resolve_token_manager->hook();
 		}
+
+		
 
 	private:
 		inline static uintptr_t fake_code;
+		inline static std::unique_ptr<PLH::HWBreakPointHook> comp_compile_manager;
+		inline static std::unique_ptr<PLH::HWBreakPointHook> imp_resolve_token_manager;
 
 		virtual void import_phase(uintptr_t compiler) const = 0;
 
 		void comp_compile(uintptr_t* method_code, uint32_t* code_size, const uintptr_t compile_flags)
 		{
+			auto protection_object = comp_compile_manager->getProtectionObject();
+
 			const auto compiler = reinterpret_cast<uintptr_t>(this);
 			const auto info = compiler + offsets::compiler_offsets.at("info");
 			const auto method_descriptor = read<uintptr_t>(info + offsets::info_offsets.at("compMethodHnd"));
@@ -58,6 +63,8 @@ namespace jit_hook::hooks
 
 		void imp_resolve_token(uint32_t* token, const uintptr_t resolved_token, const int32_t kind)
 		{
+			auto protection_object = imp_resolve_token_manager->getProtectionObject();
+
 			offsets::imp_resolve_token(this, token, resolved_token, kind);
 			const auto module = read<uintptr_t>(resolved_token + offsets::resolved_token_offsets.at("tokenScope"));
 
