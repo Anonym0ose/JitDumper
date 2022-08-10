@@ -22,6 +22,6 @@
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 	</PropertyGroup>
 	<ItemGroup>
-      <PackageReference Include="AsmResolver.DotNet" Version="4.7.1" />
+      <PackageReference Include="AsmResolver.DotNet" Version="4.11.2" />
     </ItemGroup>
 </Project>
