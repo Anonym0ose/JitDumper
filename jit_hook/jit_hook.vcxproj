@@ -200,12 +200,8 @@
     <ClInclude Include="hooks\hook_manager.hpp" />
     <ClInclude Include="hooks\compiler.hpp" />
     <ClInclude Include="hooks\cee_info.hpp" />
-    <ClInclude Include="hooks\detours\detours.h" />
     <ClInclude Include="hooks\profiles\compiler_creator.hpp" />
     <ClInclude Include="hooks\profiles\compiler_net_4.hpp" />
-    <ClCompile Include="hooks\detours\detours.cpp" />
-    <ClCompile Include="hooks\detours\disasm.cpp" />
-    <ClCompile Include="hooks\detours\modules.cpp" />
     <ClCompile Include="jit_hook.cpp" />
     <ClInclude Include="pdb\pdb_process.hpp" />
   </ItemGroup>

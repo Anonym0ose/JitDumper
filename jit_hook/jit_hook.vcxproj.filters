@@ -17,9 +17,6 @@
     <Filter Include="Source Files\hooks\profiles">
       <UniqueIdentifier>{36268eb8-0738-4bd6-ba97-6bd81f2b6780}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\hooks\detours">
-      <UniqueIdentifier>{e52b52e5-7fd9-4c00-9c23-363f9f0eda12}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\hooks\callback">
       <UniqueIdentifier>{c588fad0-2dd6-497c-8317-eea341520da8}</UniqueIdentifier>
     </Filter>
@@ -30,15 +27,6 @@
     </ClCompile>
     <ClCompile Include="jit_hook.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="hooks\detours\modules.cpp">
-      <Filter>Source Files\hooks\detours</Filter>
-    </ClCompile>
-    <ClCompile Include="hooks\detours\detours.cpp">
-      <Filter>Source Files\hooks\detours</Filter>
-    </ClCompile>
-    <ClCompile Include="hooks\detours\disasm.cpp">
-      <Filter>Source Files\hooks\detours</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -74,9 +62,6 @@
     </ClInclude>
     <ClInclude Include="hooks\profiles\compiler_creator.hpp">
       <Filter>Source Files\hooks\profiles</Filter>
-    </ClInclude>
-    <ClInclude Include="hooks\detours\detours.h">
-      <Filter>Source Files\hooks\detours</Filter>
     </ClInclude>
     <ClInclude Include="hooks\compiler.hpp">
       <Filter>Source Files\hooks</Filter>

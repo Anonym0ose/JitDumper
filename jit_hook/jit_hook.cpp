@@ -2,7 +2,6 @@
 #include "offsets/clr_offsets.hpp"
 #include "hooks/callback/callback_info.hpp"
 #include "hooks/utils.hpp"
-#include "hooks/detours/detours.h"
 #include "hooks/hook.hpp"
 #include "hooks/hook_manager.hpp"
 #include "hooks/cee_info.hpp"
